@@ -1,0 +1,17 @@
+print:
+  juhe:
+    appid: 926508687122599936
+    secret: 0d3bcef8f009462ba3d14a11cb7ba178
+    url:
+      print: https://printer.juhesaas.com/openapi/print
+      getPrintStatus: https://printer.juhesaas.com/openapi/getPrintStatus
+      payInVoice: https://printer.juhesaas.com/openapi/payInVoice
+      addPrinter: https://printer.juhesaas.com/openapi/addPrinter
+      editPrinter: https://printer.juhesaas.com/openapi/editPrinter
+      delPrinter: https://printer.juhesaas.com/openapi/delPrinter
+      setDensity: https://printer.juhesaas.com/openapi/setDensity
+      setVolume: https://printer.juhesaas.com/openapi/setVolume
+      getDeviceStatus: https://printer.juhesaas.com/openapi/getDeviceStatus
+      cleanWaitingQueue: https://printer.juhesaas.com/openapi/cleanWaitingQueue
+      getSimInfo: https://printer.juhesaas.com/openapi/getSimInfo
+      setImage: https://printer.juhesaas.com/openapi/setImage

@@ -1,0 +1,52 @@
+
+# 微信配置
+wx:
+  miniapp:
+    configs:
+      - appid: wxf25ba88aa880e9cf #微信小程序的appid
+        secret: e9ad6cbaa8961e0caaeda4602156c979 #微信小程序的Secret
+        token: #微信小程序消息服务器配置的token
+        aesKey: #微信小程序消息服务器配置的EncodingAESKey
+        msgDataFormat: JSON
+  pay:
+    client-configs:
+      - env: test
+        channelCode: alipay
+        privateKey: MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCIMtRtArevU4WGinHSDGY0XEXmtMyWYuUcAE6lWFuJMpJIkDjBvaz1Y6U86p/5DQzd1Hc8rn6qB7ljMLiCQFJkeM8VlzM9kwQ8ATRNkbP8Zbw/bpTCjKNk/I6cHKy5GM36JEV5JJaiislrnU6c8EhWlQwbq2UZGSGoC8T2QF3XP4wISVE/jyKYWSmhdwe3NRClPbM0sDpEyTKy1TBulMUgXOSDmbINkYD+q4bd9Gx3PfbUJuDA9CdQUkofjj4R7+7qVCXY01gGcpOC8q8pE7yXVJgsvk9T8Yb1II58tZWGXP72wSZdADl0o5vyXA5YDSY2JJxpb4Tu1T5glTFFDuJpAgMBAAECggEAVj65vX3nCyL8fsHUaYpofeegbAM5OlHNevnG03UsIajgcQrCpgySJaG/1N9OBct5xk7wYoCsvMa/YkxLyk8o3W6S0703OVqLZ+PrVuNY8g8KMbC4iqm8Hgq/06NkzKEkba3iQGAm8y6ndXnbeg2+APXJAQx7rHT5lww84SLJSa+KEUK5J06HIyRsk9mX/WpweGtAzgcGNJsOES6NufIuACYCjIhBRxeWJJCXkevojc8+jUVwgxhsfUXgTZGgxomJQSfaU4/Pmu2D2l7Un2KgHUCnb3En8Wfo8qTLPV3yKSYoYa7hSBmGwSL20F/AOSNEy5QzMKPgRsN7wMdIIHj3MQKBgQDPk4L3V4Yn7zJ8zjvBaiG+ZERdT7mMco1YWCZEaEkVDpXQl16izw2QLSEGNfdF/sC330zGUXRPLIIuE8XRyWElYJjYVJpu0DdttJUdlShwsjuWiVRb7ng7IKvG1KZtKg9nkrkzIdA8YW9VTWZv+tUt3sNbxxAllQIGY/aSsoiQvwKBgQCn+KGrcZk2XPuk5yFw8e/T0+OKS6kmT2BH7uAt7Xk2geyRFPOKheTa9K+DhxN3Mhf0PQA29MlNrgBWwCSeLLXfjlB27JuXGitDwwxFkOnX/6SWQOJXqJcDw5e1KWvdCMb7QA9VkPB7o8mO5V6IIHKvFtlzVelSs36Rpy1VEWUu1wKBgEIVNByKQKt1+xzAi0WIBDYYtar/NpL/5P+7EHO2v410lz1Q80/hmu/LbjgL9izSbYgcDtUUGXMbOFZy9QdUlRjRJ9e3F3Mv1nWWh+JjGfzGwTGrhq+9u4kXXZhvGoymV0Eh9NPSb/jJDCib+4Cq2jNAN/F/7iQIzBw8tsL9E30BAoGALpe+KLNbH4RNXWGrmgvSTbzx2hPAuNq9x1ZQowzDWcZSW7AnGh6n68CBywc19BNWJ66gF55xFHYWq/mibqnSTU/JrCNXyWM96w74oXdgFkVYX0FiR5SBR08DDwKNZAOiRmFvn3mT64f0Sgn/3dy6Uy0QZnjHPuSBUF/CKF2p5oMCgYA01L2I2xlqz6Mvku1VT5s697XOIcoFW9srwP4clxcOhoKlWrNl6qEjfE1boLYVqXCdfRa7n4BUhvx2zK/brSrW6cVgr33SNwhPI1d0MTyWzMxetr7FilhfJ3FL3tROBmr9fcUaCTFOXc544fu51NwFoIyCuSK4Xpfa1RLu2oZbyA==
+        payPublicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAiDLUbQK3r1OFhopx0gxmNFxF5rTMlmLlHABOpVhbiTKSSJA4wb2s9WOlPOqf+Q0M3dR3PK5+qge5YzC4gkBSZHjPFZczPZMEPAE0TZGz/GW8P26UwoyjZPyOnBysuRjN+iRFeSSWoorJa51OnPBIVpUMG6tlGRkhqAvE9kBd1z+MCElRP48imFkpoXcHtzUQpT2zNLA6RMkystUwbpTFIFzkg5myDZGA/quG3fRsdz321CbgwPQnUFJKH44+Ee/u6lQl2NNYBnKTgvKvKRO8l1SYLL5PU/GG9SCOfLWVhlz+9sEmXQA5dKOb8lwOWA0mNiScaW+E7tU+YJUxRQ7iaQIDAQAB
+        appId: 2021003129694075
+        serviceUrl: https://openapi.alipay.com/gateway.do
+        charset: UTF-8
+        signType: RSA2
+        format: json
+        # 两种模式（公钥模式：psk:0,证书模式：crt:1）
+        certModel: 1
+        #应用公钥证书路径
+        aliCertPath: classpath:alipay/appCertPublicKey_2021003129694075.crt
+        #支付宝公钥证书文件路径
+        aliPayCertPath: classpath:alipay/alipayCertPublicKey_RSA2.crt
+        #支付宝CA根证书文件路径
+        aliPayRootCertPath: classpath:alipay/alipayRootCert.crt
+
+
+      - env: test
+        channelCode: weixin
+        privateKey: MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDS/txxpRy9c0858vOs6aJMLyjixIi5l4glkLqCbkwzSa+jrdPA97zY0QkQEkwjGJn33lxv0/WWREWcTlqFDyM1jl9PsdF9F32WMYC1V7q0QWMHSc9DFDGYxEbgAtrHSwvjmWkCPVEKT8ay5ur9gnzzrvNnR4fGyS90QWpHQhau5sbIlwVwyDuzGBNcOYElto5X5P8htjpxESX9fnNYLDl3D4ecNYXBqBQ/BCJNYHJ7KW8F87HJXqn+I+Z2YY2MVq2VWXTGfZLiSZXP+UklLbtFbGJZvCBjRmC7xYIWIfP8uWcwn0xhdnMAW4oeQTcTSUJxPU8zeaiBh1JFa5ob787TAgMBAAECggEBAILjZT7+jUCdGoW5SB545JxcGQHrp2FyNhwPlxO4dn7OdC2WdKjdRgI+Ul/s6dxPs5vHDhK1K0EnYwNeu9qVFGNxyYB3r5vpCZg1Z0GXhZOyiEsKJ4/WJBo/kDQAsVU2Ic7z6OdhwDckW/+5LgdLflXwrr/f6MORJGX6+oHv5oBiOWkh8S5O3hAHLhCD8LHbaPy0aLDPMSbDZ5OOijFE6DXdvicXKRSjwlDLTF7pnqsYCr234Z09GrO1AuUq+hdaEL9UgSsjp9hHXyA+JHi08W2M56YKDH5Zdp9CFKfT22FPJIT6wYd8366Y5+/WJBkPREKyBCNabzU7Q6AHTOq27vECgYEA/hRBYtidhGkZjLhQd82Drxxg/8HFB3VVliSPLhS9jS8q0Xpkob5ha95ouuwq5VbPi2eRgZy7I44yBp9d0YbZbcb4kbVeMJrMeEOKu3aGwa/K9gNP+IVM6eNy8jQd29csDfFqr3JEQV0pJFCgOUl/QU4TrlZXFh6IqzKROy8R+ykCgYEA1Jc4xkb8sI7uWUEUooSCXwbwvglxTAhau4XaT07ivy3hmcWfCx4juQ3plb+pnkPZmO0vaHFO4F7hzqX00mEu/areZLc8UXXu52kMRf48awuGbVuoN+i3nI8PYY6nkQiGyDQfCwCfkd0S/ETdw1bZhJkFDQEWMEiFB3VRY32LdZsCgYBE326+AaPpMagoWgoN/5qTjCjLC1aCaA70LSLWxe5/5+o+cGP46Cd2WwqeqMgT9M07p65sqPSddb0fyHFhC6HCvS3CKZzHph6I9x4TJNTwiduFhm5WGqQ3vlz5RKFXZ2NcwDVAK8ROx5cQbf6QqNii9iwllOf0agB4D7QIjADeyQKBgQDF+9dqAK5QF6yt/sgi2lk3+pS1xsF218j4Hx5DAep1tVsHBF6r0fPe4bAKQCbNN88sdqfSEsQsfPC6rR+l1dAXecwH7AYGr1hAtzow7SaDYoZcziGJf/ePnEPszRgNH+22AaRvcLMq+sI1okUNKJMGxCNKCxsI+GC7o2yaxU7dxQKBgCdN0CzAT9YYBPbZ4cJel/pCjWPD+0NaqIYpme55oNPWvVsZKsbSnVeCZCUChTwk3O31wWnkJ6TCd3QV1g1xwaqp81ih7E+Uvl0dQAFLLdbuDBJcySi1W71Ui6X7KBEuEQIi2THsclYSPB7DhSQV/ZJFOO4fEn3soVs52Ep/nq+K
+        payPublicKey: MIID6TCCAtGgAwIBAgIUKG4XlAqgjYAg7sHGC0z5suvK9QwwDQYJKoZIhvcNAQELBQAwXjELMAkGA1UEBhMCQ04xEzARBgNVBAoTClRlbnBheS5jb20xHTAbBgNVBAsTFFRlbnBheS5jb20gQ0EgQ2VudGVyMRswGQYDVQQDExJUZW5wYXkuY29tIFJvb3QgQ0EwHhcNMjExMjEwMTAwMTIyWhcNMjYxMjA5MTAwMTIyWjB7MRMwEQYDVQQDDAoxNjA0NDA0MzkyMRswGQYDVQQKDBLlvq7kv6HllYbmiLfns7vnu58xJzAlBgNVBAsMHuS4iua1t+acieaYn+enkeaKgOaciemZkOWFrOWPuDELMAkGA1UEBgwCQ04xETAPBgNVBAcMCFNoZW5aaGVuMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0v7ccaUcvXNPOfLzrOmiTC8o4sSIuZeIJZC6gm5MM0mvo63TwPe82NEJEBJMIxiZ995cb9P1lkRFnE5ahQ8jNY5fT7HRfRd9ljGAtVe6tEFjB0nPQxQxmMRG4ALax0sL45lpAj1RCk/Gsubq/YJ8867zZ0eHxskvdEFqR0IWrubGyJcFcMg7sxgTXDmBJbaOV+T/IbY6cREl/X5zWCw5dw+HnDWFwagUPwQiTWByeylvBfOxyV6p/iPmdmGNjFatlVl0xn2S4kmVz/lJJS27RWxiWbwgY0Zgu8WCFiHz/LlnMJ9MYXZzAFuKHkE3E0lCcT1PM3mogYdSRWuaG+/O0wIDAQABo4GBMH8wCQYDVR0TBAIwADALBgNVHQ8EBAMCBPAwZQYDVR0fBF4wXDBaoFigVoZUaHR0cDovL2V2Y2EuaXRydXMuY29tLmNuL3B1YmxpYy9pdHJ1c2NybD9DQT0xQkQ0MjIwRTUwREJDMDRCMDZBRDM5NzU0OTg0NkMwMUMzRThFQkQyMA0GCSqGSIb3DQEBCwUAA4IBAQAOnIF7gVz5Hh4Ihs/ukie2dmOrxAw5rksnBryLa8YZlRlu2dRRvohW4dxevlUWS7Op0MV9h/sijMu2gXeTzRkjEch2p0SQWcqwNmqLRs3uQkAnZVcV5e475WzSFwnj7HBm/k7aO44DKTtwiH5sp94s3AN0YP4COF7tkLPNKyMa1xuqQmyfG+lRVz5Mh7VWADteKwtUJ9UflqOVnpeSi1DASLMjLNfrOOCF+ZamJnzB+eOf423BE59xpgHg7WDPKGQA9N9ucfxGcwcaMmHjSTubBG7YkXJQztjx8sl4ncaszq3XqsaYm9gv/rBRZlOX4vRDzCasFCslSbMHLZOAjL0D
+        appId: wxdb8634feb22a5ab9
+        appSecret: 712e104d3d2586fcb8952cd8d272c9a6
+        mchId: 1604404392
+        apiV3Key: ba40df0c6afb01e5bae35d7337372cde
+        serviceUrl: https://api.weixin.qq.com
+        charset: UTF-8
+        signType: RSA2
+        format: json
+        certModel: 1
+        #应用公钥证书路径
+        privateKeyPath: classpath:weixin/wxapiclient_key.pem
+        #微信公钥证书文件路径
+        privateCertPath: classpath:weixin/wxapiclient_cert.pem
+        #支付宝CA根证书文件路径
+        payRootCertPath:
+        token: 8f5c48103b5c11ebb0460a80ff2603de
+        aeskey: 8f5c48103b5c11ebb0460a80ff2603dc99999988888

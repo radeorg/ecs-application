@@ -1,0 +1,10 @@
+dows:
+  menu:
+    items:
+      - appId: aac
+        name: '账号管理'
+        code: system2
+        roles: manager
+        scanPackages: org.dows.aac.rest.admin
+
+

@@ -1,0 +1,92 @@
+stages:
+  - check
+  - report
+  - sonarqube
+  - install
+  - image
+  - deploy
+  - publish
+
+variables:
+  ENV_NAME: ""
+  VER_NAME: ""
+
+before_script:
+  - |
+    if [[ "$CI_COMMIT_REF_NAME" =~ ^([^-]+)-(.+)$ ]]; then
+      export ENV_NAME=${BASH_REMATCH[1]}
+      export VER_NAME=${BASH_REMATCH[2]}
+    elif  [[ "$CI_COMMIT_REF_NAME" = "main" ]]; then
+      echo "合并发布，source: $CI_MERGE_REQUEST_SOURCE_BRANCH_NAME; target: CI_COMMIT_REF_NAME || CI_MERGE_REQUEST_TARGET_BRANCH_NAME = $CI_MERGE_REQUEST_TARGET_BRANCH_NAME"
+      if [[ "$CI_MERGE_REQUEST_SOURCE_BRANCH_NAME" =~ ^([^-]+)-(.+)$ ]]; then
+        export ENV_NAME=prd
+        export VER_NAME=${BASH_REMATCH[2]}
+      fi
+    fi
+  - sed -i "s/\$VERSION/$VER_NAME/g" ./env/$ENV_NAME/app/.env
+  - sed -i "s/\$VERSION/$VER_NAME/g" ./cicd/$ENV_NAME/.env
+  - export $(cat ./cicd/$ENV_NAME/.env | xargs)
+
+#sonar-job:
+#  stage: sonarqube
+#  #  only:
+#  #    - main
+#  #    #- /^prd/
+#  tags:
+#    - cicd
+#  script:
+#    - echo "sonar scanner begin..."
+#    - sonar-scanner -Dsonar.analysis.CI_COMMIT_REF_NAME=$CI_COMMIT_REF_NAME -Dsonar.branch.name=$CI_COMMIT_REF_NAME -Dsonar.projectVersion=$CI_COMMIT_REF_NAME
+cache:
+  paths:
+    - ./target
+install-job:
+  stage: install
+  tags:
+    - cicd-shdy
+  script:
+    - echo "current branch is $CI_COMMIT_REF_NAME"
+    - echo "execute cmd :mvn clean install -Dmaven.test.skip=true to deploy shdy-task modules"
+    - mvn clean install -s /etc/gitlab-runner/settings.xml -U -Dmaven.test.skip=true
+    - cfl=$(git log -m -1 --name-only --pretty="format:" HEAD)
+    - cfs=$(echo $cfl | tr '\n' ' ')
+    - ccm=$(echo $CI_COMMIT_MESSAGE | tr '\n' ' ')
+    - echo "参数列表:'$GITLAB_USER_NAME' '$GITLAB_USER_EMAIL' '$MODULE_CODE' '$CI_COMMIT_REF_NAME' '$CI_COMMIT_SHA' '$ccm' '$cfs'"
+    #- sh ./cicd/$ENV_NAME/ci_webhook.sh "$GITLAB_USER_NAME" "$GITLAB_USER_EMAIL" "$APP_CODE/$APP_NAME" "$CI_COMMIT_REF_NAME" "$CI_COMMIT_SHA" "$ccm" "$cfs" "true"
+    #- echo "scp $ENV_NAME config files to remote server[$SSH_HOST/$APPLICATION_ROOT]"
+    #- sshpass -p $SSH_PASS scp -r -o StrictHostKeyChecking=no ./cicd/$ENV_NAME $SSH_USER@$SSH_HOST:$APPLICATION_ROOT
+    - echo "maven install complete..."
+#  artifacts:
+#    name: hengli-application
+#    paths:
+#      - ./env/$ENV_NAME
+#      - ./target/*.jar
+
+
+build-image:
+  stage: image
+  tags:
+    - cicd-shdy
+  script:
+    - echo "docker build -t $DOCKER_IMAGE:$TAG ."
+    - docker login -u $REGISTRY_USER -p $REGISTRY_PASS $REGISTRY_URL
+    - echo "docker tag $DOCKER_IMAGE:$TAG $REGISTRY_URL/$DOCKER_IMAGE:$TAG"
+    - docker build -t $REGISTRY_URL/$DOCKER_IMAGE:$TAG .
+    - echo "docker push $REGISTRY_URL/$DOCKER_IMAGE:$TAG"
+#    - docker tag $DOCKER_IMAGE:$TAG $REGISTRY_URL/$DOCKER_IMAGE:$TAG
+    - docker push $REGISTRY_URL/$DOCKER_IMAGE:$TAG
+
+deploy-job:
+  stage: deploy
+  tags:
+    - cicd-shdy
+  script:
+    - echo "scp environment [$ENV_NAME] config files to remote api server[$APP_SSH_HOST/$APP_DIR]"
+    - sshpass -p $APP_SSH_PASS scp -r -o StrictHostKeyChecking=no ./env/$ENV_NAME $APP_SSH_USER@$APP_SSH_HOST:$APP_DIR
+
+publish-job:
+  stage: publish
+  tags:
+    - cicd-shdy
+  script:
+    - sshpass -p $APP_SSH_PASS ssh -o StrictHostKeyChecking=no $APP_SSH_USER@$APP_SSH_HOST sh $APP_DIR/$ENV_NAME/start.sh

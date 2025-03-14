@@ -1,0 +1,5 @@
+dows:
+  app:
+    inits:
+      - tenantId: 1
+        appId: 12345678

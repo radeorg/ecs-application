@@ -1,0 +1,14 @@
+dows:
+  rbac:
+    init:
+      rbac:
+        menu:
+          update: true
+          items: system,user,role
+        uri:
+          update: true
+          items: org.dows.rbac.rest.admin
+        role:
+          update: true
+          items: manager
+

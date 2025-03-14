@@ -1,0 +1,10 @@
+dows:
+  uri:
+    items:
+      - appId: material
+        name: '物料管理'
+        code: material
+        roles: manager
+        scanPackages: org.dows.rbac.rest.admin
+
+

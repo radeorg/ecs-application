@@ -1,0 +1,1 @@
+scp -p $pwd -o StrictHostKeyChecking=no $sourceFile root@$host $target

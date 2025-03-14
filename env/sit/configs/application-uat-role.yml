@@ -1,0 +1,14 @@
+dows:
+  role:
+    items:
+      - appId: uat
+        name: '系统管理111'
+        code: system2
+      - appId: uat
+        name: '用户管理233'
+        code: 'user'
+      - appId: uat
+        name: '角色管理44'
+        code: 'role'
+
+

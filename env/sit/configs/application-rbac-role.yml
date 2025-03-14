@@ -1,0 +1,8 @@
+dows:
+  role:
+    items:
+      - appId: rbac
+        name: 管理员
+        code: manager
+
+

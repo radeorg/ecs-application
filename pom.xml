@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>dows-parent</artifactId>
+        <groupId>org.dows.framework</groupId>
+        <version>20240120-SNAPSHOT</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>ecs-application</artifactId>
+    <groupId>org.dows.cloud</groupId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <properties>
+        <spring-cloud.version>2023.0.3</spring-cloud.version>
+        <image.alias>acre-api</image.alias>
+        <image.tag>1.0.231114</image.tag>
+        <jdk.version>17</jdk.version>
+        <uat.version>1.0.0-SNAPSHOT</uat.version>
+        <rbac.version>1.0.0-SNAPSHOT</rbac.version>
+        <log.version>1.0.0-SNAPSHOT</log.version>
+        <aac.version>1.0.0-SNAPSHOT</aac.version>
+        <cdc.version>1.0.0-SNAPSHOT</cdc.version>
+        <app.version>1.0.0-SNAPSHOT</app.version>
+        <workspace.version>1.0.0-SNAPSHOT</workspace.version>
+        <eqpt.version>1.0.0-SNAPSHOT</eqpt.version>
+        <material.version>1.0.0-SNAPSHOT</material.version>
+        <inventory.version>1.0.0-SNAPSHOT</inventory.version>
+        <task.version>1.0.0-SNAPSHOT</task.version>
+        <vac.version>1.0.0-SNAPSHOT</vac.version>
+        <iot.version>1.0.0-SNAPSHOT</iot.version>
+        <license.version>1.0.0-SNAPSHOT</license.version>
+
+        <flink.version>1.19.1</flink.version>
+
+        <jna.version>3.0.9</jna.version>
+
+        <revision.version>revision</revision.version>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.dows.cloud</groupId>
+            <artifactId>uat-boot</artifactId>
+            <version>${uat.version}</version>
+        </dependency>
+        <!--<dependency>
+            <groupId>org.dows.cloud</groupId>
+            <artifactId>rbac-boot</artifactId>
+            <version>${rbac.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.dows.cloud</groupId>
+            <artifactId>log-boot</artifactId>
+            <scope>compile</scope>
+            <version>${log.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.dows.cloud</groupId>
+            <artifactId>aac-boot</artifactId>
+            <version>${aac.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.dows.cloud</groupId>
+            <artifactId>app-boot</artifactId>
+            <version>${app.version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.dows.cloud</groupId>
+            <artifactId>cdc-boot</artifactId>
+            <version>${cdc.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.dows.cloud</groupId>
+            <artifactId>workspace-boot</artifactId>
+            <version>${workspace.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.dows.cloud</groupId>
+            <artifactId>material-boot</artifactId>
+            <version>${material.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.dows.cloud</groupId>
+            <artifactId>eqpt-boot</artifactId>
+            <version>${eqpt.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.dows.cloud</groupId>
+            <artifactId>task-boot</artifactId>
+            <version>${task.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.dows.cloud</groupId>
+            <artifactId>inventory-boot</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+            <version>${inventory.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.dows.cloud</groupId>
+            <artifactId>vac-boot</artifactId>
+            <version>${vac.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.dows.cloud</groupId>
+            <artifactId>license-client</artifactId>
+            <version>${license.version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.dows.framework</groupId>
+            <artifactId>framework-cdc</artifactId>
+        </dependency>
+
+        <dependency>
+            <artifactId>dows-module</artifactId>
+            <groupId>org.dows.cloud</groupId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <artifactId>dows-dict</artifactId>
+            <groupId>org.dows.cloud</groupId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>-->
+
+
+        <!--        <dependency>-->
+        <!--            <groupId>org.dows.cloud</groupId>-->
+        <!--            <artifactId>iot-boot</artifactId>-->
+        <!--            <version>${iot.version}</version>-->
+        <!--        </dependency>-->
+
+        <dependency>
+            <groupId>io.debezium</groupId>
+            <artifactId>debezium-connector-mysql</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.debezium</groupId>
+            <artifactId>debezium-connector-sqlserver</artifactId>
+        </dependency>
+
+
+
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
+        <!--        <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-actuator</artifactId>
+                </dependency>-->
+
+        <!--api 接口文档-->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+        </dependency>
+
+
+        <!--spring-web-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-undertow</artifactId>
+        </dependency>
+
+        <!--异步日志-->
+        <dependency>
+            <groupId>com.lmax</groupId>
+            <artifactId>disruptor</artifactId>
+        </dependency>
+
+        <!--数据库-->
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mariadb.jdbc</groupId>
+            <artifactId>mariadb-java-client</artifactId>
+
+            <exclusions>
+                <exclusion>
+                    <artifactId>jna-platform</artifactId>
+                    <groupId>net.java.dev.jna</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>jna</artifactId>
+                    <groupId>net.java.dev.jna</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>11.2.3.jre17</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongo-java-driver</artifactId>
+            <version>3.12.4</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+<!--        <dependency>-->
+<!--            <groupId>org.postgresql</groupId>-->
+<!--            <artifactId>postgresql</artifactId>-->
+<!--            <version>42.7.3</version>-->
+<!--        </dependency>-->
+
+
+        <dependency>
+            <groupId>com.alibaba.fastjson2</groupId>
+            <artifactId>fastjson2</artifactId>
+            <version>2.0.51</version>
+        </dependency>
+
+        <dependency>
+            <groupId>examples</groupId>
+            <artifactId>examples</artifactId>
+            <version>1</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/examples.jar</systemPath>
+        </dependency>
+
+        <!--<dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-core</artifactId>
+            <type>jar</type>
+            &lt;!&ndash;<systemPath>${project.basedir}/src/main/resources/flink-core-1.19.1.jar</systemPath>&ndash;&gt;
+            <scope>runtime</scope>
+        </dependency>-->
+
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.flink</groupId>-->
+        <!--            <artifactId>flink-core</artifactId>-->
+        <!--            <type>jar</type>-->
+        <!--            &lt;!&ndash;<systemPath>${project.basedir}/src/main/resources/flink-core-1.19.1.jar</systemPath>&ndash;&gt;-->
+        <!--            <scope>runtime</scope>-->
+        <!--        </dependency>-->
+
+
+        <!--配置加密-->
+        <!--        <dependency>
+                    <groupId>com.github.ulisesbocchio</groupId>
+                    <artifactId>jasypt-spring-boot-starter</artifactId>
+                    <version>3.0.5</version>
+                </dependency>-->
+        <!--导出easyexcel 3.0.5-->
+        <!-- <dependency>
+             <groupId>com.alibaba</groupId>
+             <artifactId>easyexcel</artifactId>
+             <version>3.3.4</version>
+             <exclusions>
+                 <exclusion>
+                     <groupId>cglib</groupId>
+                     <artifactId>cglib</artifactId>
+                 </exclusion>
+             </exclusions>
+         </dependency>
+         <dependency>
+             <groupId>cglib</groupId>
+             <artifactId>cglib</artifactId>
+             <version>2.2</version>
+         </dependency>-->
+
+    </dependencies>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.mariadb.jdbc</groupId>
+                <artifactId>mariadb-java-client</artifactId>
+                <version>3.5.1</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <!--<resources>
+            <resource>
+                <directory>configs</directory>
+                <includes>
+                    <include>**/*.*</include>
+                </includes>
+            </resource>
+        </resources>-->
+        <plugins>
+
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-compiler-plugin</artifactId>-->
+<!--                <configuration>-->
+<!--                    <source>${jdk.version}</source>-->
+<!--                    <target>${jdk.version}</target>-->
+<!--                    <encoding>utf-8</encoding>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+
+            <!--<plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>org.dows.ecs.admin.AcreApplication</mainClass>
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>-->
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <delimiters>@</delimiters>
+                    <useDefaultDelimiters>false</useDefaultDelimiters>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                    <encoding>utf-8</encoding>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>org.dows.ecs.admin.AcreApplication</mainClass>
+                    <includeSystemScope>true</includeSystemScope>
+                    <layers>
+                        <enabled>true</enabled>
+                    </layers>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!--<plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.43.0</version>
+                &lt;!&ndash;全局配置&ndash;&gt;
+                <configuration>
+                    &lt;!&ndash;这一部分是为了实现对远程docker容器的控制&ndash;&gt;
+                    &lt;!&ndash;docker主机地址,用于完成docker各项功能,注意是tcp不是http!&ndash;&gt;
+                    <dockerHost>tcp://localhost:2375</dockerHost>
+                    &lt;!&ndash;docker远程访问所需证书地址,如果docker远程主机没有启用TLS验证则不需要配证书&ndash;&gt;
+                    &lt;!&ndash;<certPath>${project.basedir}/docker/ssh</certPath>&ndash;&gt;
+
+                    &lt;!&ndash;这一部分是为了实现docker镜像的构建和推送&ndash;&gt;
+                    &lt;!&ndash;registry地址,用于推送,拉取镜像,我这里用的是阿里的registry&ndash;&gt;
+                    <registry>${registry.host}</registry>
+                    &lt;!&ndash;认证配置,用于私有registry认证,如果忘记了可以去阿里的registry查看&ndash;&gt;
+                    <authConfig>
+                        <push>
+                            <username>${registry.username}</username>
+                            <password>${registry.password}</password>
+                        </push>
+                    </authConfig>
+
+                    &lt;!&ndash;镜像相关配置,支持多镜像&ndash;&gt;
+                    <images>
+                        &lt;!&ndash; 单个镜像配置 &ndash;&gt;
+                        <image>
+                            &lt;!&ndash;镜像名(含版本号)&ndash;&gt;
+                            <name>wozth/${image.alias}:${image.tag}</name>
+                            &lt;!&ndash;别名:用于容器命名和在docker-compose.yml文件只能找到对应名字的配置&ndash;&gt;
+                            &lt;!&ndash;                            <alias>${image.alias}</alias>&ndash;&gt;
+                            &lt;!&ndash;镜像build相关配置&ndash;&gt;
+                            <build>
+                                &lt;!&ndash;使用dockerFile文件&ndash;&gt;
+                                <dockerFile>${project.basedir}/Dockerfile</dockerFile>
+                                &lt;!&ndash;                                <assembly>&ndash;&gt;
+                                &lt;!&ndash;                                    <descriptorRef>artifact</descriptorRef>&ndash;&gt;
+                                &lt;!&ndash;                                </assembly>&ndash;&gt;
+                                &lt;!&ndash;                                <tags>&ndash;&gt;
+                                &lt;!&ndash;                                    <tag>${project.version}</tag>&ndash;&gt;
+                                &lt;!&ndash;                                </tags>&ndash;&gt;
+                            </build>
+                            &lt;!&ndash;配置docker-compose文件&ndash;&gt;
+                            &lt;!&ndash;<external>
+                                <type>compose</type>
+                                <basedir>${project.basedir}/env/sit</basedir>
+                                <composeFile>docker-compose.yml</composeFile>
+                            </external>&ndash;&gt;
+                            &lt;!&ndash;容器run相关配置&ndash;&gt;
+                            &lt;!&ndash;<run>
+                                &lt;!&ndash;配置运行时容器命名策略为:别名,如果不指定则默认为none,即使用随机分配名称&ndash;&gt;
+                                <namingStrategy>alias</namingStrategy>
+                            </run>&ndash;&gt;
+                        </image>
+                    </images>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>build-image</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>remove</goal>
+                            <goal>build</goal>
+                            <goal>push</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <dependencies>
+                    &lt;!&ndash;该插件需要这个依赖&ndash;&gt;
+                    <dependency>
+                        <groupId>commons-codec</groupId>
+                        <artifactId>commons-codec</artifactId>
+                        <version>1.15</version>
+                    </dependency>
+                </dependencies>
+            </plugin>-->
+        </plugins>
+    </build>
+
+    <!--定义两种开发环境-->
+    <!-- <profiles>
+         <profile>
+             &lt;!&ndash;不同环境的唯一id&ndash;&gt;
+             <id>dev</id>
+             <activation>
+                 &lt;!&ndash;默认激活开发环境&ndash;&gt;
+                 <activeByDefault>true</activeByDefault>
+             </activation>
+             <properties>
+                 &lt;!&ndash;profile.active对应application.yml中的@profile.active@&ndash;&gt;
+                 <profile.active>dev</profile.active>
+             </properties>
+         </profile>
+         &lt;!&ndash;测试环境&ndash;&gt;
+         <profile>
+             <id>test</id>
+             <properties>
+                 <profile.active>test</profile.active>
+             </properties>
+         </profile>
+         &lt;!&ndash;测试环境&ndash;&gt;
+         <profile>
+             <id>prod</id>
+             <properties>
+                 <profile.active>prod</profile.active>
+             </properties>
+         </profile>
+     </profiles>-->
+
+</project>

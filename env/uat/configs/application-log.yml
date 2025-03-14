@@ -1,0 +1,46 @@
+#生产环境
+spring:
+  config:
+    activate:
+      on-profile: prd
+log:
+  binlog:
+    hosts:
+      - name: wes
+        host: sh-cdb-1qjrazc8.sql.tencentcdb.com
+        port: 63915
+        username: admin
+        password: ENC(mY6NIyj0expFSKj0ahyGhwK189kA5fcB)
+        timeOffset: 1000
+---
+#测试环境
+spring:
+  config:
+    activate:
+      on-profile: sit
+log:
+  binlog:
+    hosts:
+      - name: wes
+        host: 172.17.32.15
+        port: 23306
+        username: root
+        password: 123456
+        timeOffset: 1000
+
+
+---
+#测试环境
+spring:
+  config:
+    activate:
+      on-profile: dev
+log:
+  binlog:
+    hosts:
+      - name: wes
+        host: 127.0.0.1
+        port: 3306
+        username: root
+        password: 123456
+        timeOffset: 1000

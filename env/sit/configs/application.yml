@@ -1,0 +1,36 @@
+server:
+  port: 8080
+  undertow:
+    buffer-size: 1024
+    direct-buffers: true
+    threads:
+      io: 4
+      worker: 32
+#  servlet:
+#    context-path: /tenant
+
+
+spring:
+  application:
+    name: wes-application
+  profiles:
+    include: |
+      version,mysql,mybatis,log,oss,ws,ssh,domain,apidoc,
+      uat-role,uat-menu,uat-uri,
+      rbac-role,rbac-menu,rbac-uri,rbac-root,
+      aac-root,aac-captcha,aac-caffeine,
+      aac-role,aac-menu,aac-uri,
+      workspace-role,workspace-menu,workspace-uri,
+      eqpt-role,eqpt-menu,eqpt-uri,
+      material-role,material-menu,material-uri,
+      task-role,task-menu,task-uri
+    active: dev
+  servlet:
+    multipart:
+      max-file-size: 10MB
+
+
+#jasypt:
+#  encryptor:
+#    algorithm: PBEWithMD5AndDES
+#    iv-generator-classname: org.jasypt.iv.NoIvGenerator

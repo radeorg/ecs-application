@@ -1,0 +1,10 @@
+dows:
+  role:
+    items:
+      - appId: wes
+        name: '管理员'
+        code: manager
+        roles: manager
+
+
+

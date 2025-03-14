@@ -1,0 +1,45 @@
+#  private List<String> uris = new ArrayList(Collections.singletonList("http://localhost:9200"));
+#  private String username;
+#  private String password;
+#  private Duration connectionTimeout = Duration.ofSeconds(1L);
+#  private Duration readTimeout = Duration.ofSeconds(30L);
+#spring:
+#  mvc:
+#    pathmatch:
+#      matching-strategy: ant_path_matcher
+
+spring:
+  servlet:
+    multipart:
+      max-request-size: 10MB
+      max-file-size: 10MB
+---
+#生产环境
+spring:
+config:
+  activate:
+    on-profile: prd
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+---
+#开发环境
+spring:
+config:
+  activate:
+    on-profile: dev
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+---
+#测试环境
+spring:
+  config:
+    activate:
+      on-profile: sit
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true

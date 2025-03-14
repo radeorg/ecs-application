@@ -1,0 +1,10 @@
+dows:
+  uri:
+    items:
+      - appId: uat
+        name: '用户管理'
+        code: system2
+        roles: manager
+        scanPackages: org.dows.rbac.rest.admin
+
+

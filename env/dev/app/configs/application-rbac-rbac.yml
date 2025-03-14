@@ -1,0 +1,24 @@
+dows:
+  menu:
+    items:
+      - appId: 1234
+        name: '资源权限'
+        code: rbac
+        roles: admin
+        scanPackages: org.dows.rbac.rest.admin
+
+  role:
+    items:
+      - appId: 1234
+        name: admin
+        code: rbac
+
+  uri:
+    items:
+      - appId: 1234
+        name: '权限管理'
+        code: rbac
+        roles: admin
+        scanPackages: org.dows.rbac.rest.admin
+
+

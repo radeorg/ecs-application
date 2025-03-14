@@ -1,0 +1,7 @@
+dows:
+  domains:
+    weixin:
+      source: /dows/resources/weixin/domain/
+      target: /usr/local/nginx/wes/home
+      sh: classpath:upload.sh
+      host: 81.69.195.111

@@ -1,0 +1,22 @@
+dows:
+  menu:
+    items:
+      - appId: 1234
+        name: 设备管理
+        code: eqpt
+        roles: admin
+        scanPackages: org.dows.eqpt.rest.admin
+
+  role:
+    items:
+      - appId: 1234
+        name: admin
+        code: eqpt
+
+  uri:
+    items:
+      - appId: 1234
+        name: '设备管理'
+        code: eqpt
+        roles: admin
+        scanPackages: org.dows.eqpt.rest.admin

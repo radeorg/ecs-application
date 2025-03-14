@@ -1,0 +1,9 @@
+#License相关配置
+dows:
+  license:
+    subject: shdy-wes
+    publicAlias: publicCert
+    storePass: public_dows1234
+    licensePath: C:/work/project/wes/wes-application/shdy-wes.lic #如果不填默认在用户目录
+    #publicKeysStorePath: E:/temps/dows/publicCerts.keystore #不如不填默认需要在resources下放置该文件
+    enable: false

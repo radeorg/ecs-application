@@ -1,0 +1,63 @@
+dows:
+  vac:
+    channel:
+      hik:
+        url: rtsp://admin:admin123@192.168.1.64:554/Streaming/Channels/101
+        username: admin
+        password: admin123
+        mock: true
+        sdkPath: E:\workspaces\project\shdy\acre-application\hik
+        sdkVersion: V31
+      mcgs:
+        #url: sql://admin:admin123@192.168.1.64:554/Streaming/Channels/101
+        #username: admin
+        #password: admin123
+        mock: true
+        url: plc://s1200@192.168.111.224:102
+        coreSize: 5
+        delay: 1000
+        sdkPath:
+
+    plc:
+      dbs: DB1,DB2,DB3,DB4
+      eqpt-mapping:
+        DB1: sks-z0001-screen-00001
+        DB2: sks-z0001-screen-00002
+        DB3: sks-z0001-screen-00003
+        DB4: sks-z0001-screen-00004
+      offsets:
+        plcOpen: DBX0.0
+        plcClose: DBX0.1
+        plcOpened: DBX0.3
+        plcClosed: DBX0.4
+        apiOpen: DBX2.0
+        apiClose: DBX2.1
+        apiOpened: DBX2.3
+        apiClosed: DBX2.4
+        alarmed: DBX3.0
+
+        alarmType: DBB4
+        alarmContent: DBB26
+        eqptNo: DBB158
+        appId: DBB224
+        status: DBB258
+        workModel: DBB280
+        type: DBB302
+        phone: DBB324
+        "no": DBB346
+        craneNo: DBB378
+        loadWeight: DBB410
+        exchangeWeight: DBB442
+        beginTime: DBB474
+        endTime: DBB506
+        vehicleNo: DBB538
+
+    register:
+      scanPackages:
+        #      - org.dows.vac.hik
+        #      - org.dows.vac.mcgs
+        - org.dows.vac
+
+    init:
+      #appId: 24Uk269Gu16vD19bv43
+      appId: 12345

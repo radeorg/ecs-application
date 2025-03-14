@@ -1,0 +1,8 @@
+spring:
+  init:
+    queue:
+      manualModelSize: 10
+      autoModelSize: 30
+    appId: 1234
+
+

@@ -1,0 +1,46 @@
+spring:
+  #  profiles: dev
+  config:
+    activate:
+      on-profile: dev
+  init:
+    mongodb:
+      enabled: true
+      username: root
+      password: shdy123!
+
+---
+spring:
+  #  profiles: sit
+  config:
+    activate:
+      on-profile: sit
+  init:
+    mongodb:
+      enabled: true
+      username: root
+      password: shdy123!
+
+---
+spring:
+  #  profiles: uat
+  config:
+    activate:
+      on-profile: uat
+  init:
+    mongodb:
+      enabled: true
+      username: root
+      password: shdy123!
+
+---
+spring:
+  #  profiles: prd
+  config:
+    activate:
+      on-profile: prd
+  init:
+    mongodb:
+      enabled: true
+      username: root
+      password: shdy123!

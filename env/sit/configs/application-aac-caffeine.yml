@@ -1,0 +1,26 @@
+#spring:
+#  cache:
+#    type: CAFFEINE
+#    caffeine:
+#      spec: maximumSize=500,expireAfterAccess=600s
+
+dows:
+  cache:
+    caffeine:
+      enabled: true
+      # 全局配置
+      cacheName: aac,token
+      spec: maximumSize=500,expireAfterWrite=600s
+      # 自定义配置，cacheName相同可覆盖全局配置
+      configs:
+        - cacheName: sessionCache
+          spec: maximumSize=200
+        - cacheName: userCache
+          spec: maximumSize=200
+---
+#开发环境
+spring:
+  config:
+    activate:
+      on-profile: dev
+

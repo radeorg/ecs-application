@@ -1,0 +1,9 @@
+ws:
+  port: 80
+dows:
+  websocket:
+    port: 80
+    producer:
+      retry:
+        cron: 0/3 * * * * ?
+        duration: 3

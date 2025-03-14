@@ -1,0 +1,22 @@
+dows:
+  menu:
+    items:
+      - appId: 1234
+        name: 库存管理
+        code: inventory
+        roles: admin
+        scanPackages: org.dows.inventory.rest.admin
+
+  role:
+    items:
+      - appId: 1234
+        name: admin
+        code: inventory
+
+  uri:
+    items:
+      - appId: 1234
+        name: '库存管理'
+        code: inventory
+        roles: admin
+        scanPackages: org.dows.inventory.rest.admin

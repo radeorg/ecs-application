@@ -1,0 +1,7 @@
+dows:
+  cron:
+    task:
+      scanner:
+        enable: true
+        expr: 0/10 * * * * ?
+        size: 1000

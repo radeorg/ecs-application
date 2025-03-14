@@ -1,0 +1,54 @@
+dows:
+  module:
+    init: false
+    init-apps: 1,2,3
+    resources:
+      - update: true
+        namespace: uat
+        descr: 用户身份
+        scanPackages: org.dows.uat.rest.admin
+
+      - update: true
+        namespace: rbac
+        descr: 资源权限
+        scanPackages: org.dows.rbac.rest.admin,org.dows.rbac.rest.tenant
+
+      - update: true
+        namespace: log
+        descr: 应用日志
+        scanPackages: org.dows.log.rest.admin
+
+      - update: true
+        namespace: aac
+        descr: 认证授权
+        scanPackages: org.dows.aac.rest
+
+      - update: true
+        namespace: app
+        descr: 应用管理
+        scanPackages: org.dows.app.rest.admin
+
+      - update: true
+        namespace: workspace
+        descr: 工作空间
+        scanPackages: org.dows.workspace.rest.admin
+
+      - update: true
+        namespace: eqpt
+        descr: 设备管理
+        scanPackages: org.dows.eqpt.rest.admin
+
+      - update: true
+        namespace: material
+        descr: 物料管理
+        scanPackages: org.dows.material.rest.admin
+
+      - update: true
+        namespace: inventory
+        descr: 库存管理
+        scanPackages: org.dows.inventory.rest.admin
+
+      - update: true
+        namespace: task
+        descr: 任务管理
+        scanPackages: org.dows.task.rest.admin

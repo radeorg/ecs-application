@@ -1,0 +1,117 @@
+dows:
+  rbac:
+    initScan: false
+    config-file:
+      rbac: classpath://application-%s-rbac.yml
+#      menu: classpath://application-%s-menu.yml
+#      uri: classpath://application-%s-uri.yml
+    init:
+      rbac:
+        menu:
+          update: true
+          items: rbac
+        uri:
+          update: true
+          items: org.dows.rbac.rest.admin
+        role:
+          update: true
+          items: rbac
+
+      eqpt:
+        menu:
+          update: true
+          items: eqpt
+        uri:
+          update: true
+          items: org.dows.eqpt.rest.admin
+        role:
+          update: true
+          items: eqpt
+
+      material:
+        menu:
+          update: true
+          items: material
+        uri:
+          update: true
+          items: org.dows.material.rest.admin
+        role:
+          update: true
+          items: material
+
+      task:
+        menu:
+          update: true
+          items: task
+        uri:
+          update: true
+          items: org.dows.task.rest.admin
+        role:
+          update: true
+          items: task
+
+      uat:
+        menu:
+          update: true
+          items: uat
+        uri:
+          update: true
+          items: org.dows.uat.rest.admin
+        role:
+          update: true
+          items: uat
+
+      aac:
+        menu:
+          update: true
+          items: aac
+        uri:
+          update: true
+          items: org.dows.aac.rest.admin
+        role:
+          update: true
+          items: aac
+
+      workspace:
+        menu:
+          update: true
+          items: workspace
+        uri:
+          update: true
+          items: org.dows.workspace.rest.admin
+        role:
+          update: true
+          items: workspace
+
+      app:
+        menu:
+          update: true
+          items: app
+        uri:
+          update: true
+          items: org.dows.app.rest.admin
+        role:
+          update: true
+          items: app
+
+      log:
+        menu:
+          update: true
+          items: log
+        uri:
+          update: true
+          items: org.dows.log.rest.admin
+        role:
+          update: true
+          items: log
+
+      inventory:
+        menu:
+          update: true
+          items: inventory
+        uri:
+          update: true
+          items: org.dows.inventory.rest.admin
+        role:
+          update: true
+          items: inventory

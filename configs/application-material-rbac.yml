@@ -1,0 +1,22 @@
+dows:
+  menu:
+    items:
+      - appId: 1234
+        name: 物料管理
+        code: material
+        roles: admin
+        scanPackages: org.dows.material.rest.admin
+
+  role:
+    items:
+      - appId: 1234
+        name: admin
+        code: material
+
+  uri:
+    items:
+      - appId: 1234
+        name: '物料管理'
+        code: material
+        roles: admin
+        scanPackages: org.dows.material.rest.admin

@@ -1,0 +1,126 @@
+springdoc:
+  api-docs:
+    enabled: false
+    path: /api-docs
+  swagger-ui:
+    #自定义swagger前端请求路径，输入http：127.0.0.1:8080/doc会自动重定向到swagger-ui.html页面
+    path: /doc
+  group-configs:
+    - group: acre-admin
+      packagesToScan:
+        - org.dows.uat.rest
+        - org.dows.rbac.rest
+        - org.dows.aac.rest
+        - org.dows.workspace.rest
+        - org.dows.material.rest
+        - org.dows.eqpt.rest
+        - org.dows.task.rest
+        - org.dows.inventory.rest
+        - org.dows.app.rest
+        - org.dows.module.rest
+        - org.dows.log.rest
+        - org.dows.vac.admin
+
+#    - group: uat-admin
+#      packagesToScan: org.dows.uat.rest
+#    - group: uat-tenant
+#      packagesToScan: org.dows.uat.rest.tenant
+#    - group: uat-user
+#      packagesToScan: org.dows.uat.rest.user
+
+#    - group: rbac-admin
+#      packagesToScan: org.dows.rbac.rest
+#    - group: rbac-tenant
+#      packagesToScan: org.dows.rbac.rest.tenant
+#    - group: rbac-user
+#      packagesToScan: org.dows.rbac.rest.user
+
+#    - group: aac-admin
+#      packagesToScan: org.dows.aac.rest
+#    - group: aac-tenant
+#      packagesToScan: org.dows.aac.rest.tenant
+#    - group: aac-user
+#      packagesToScan: org.dows.aac.rest.user
+
+#    - group: workspace-admin
+#      packagesToScan: org.dows.workspace.rest
+#    - group: workspace-tenant
+#      packagesToScan: org.dows.workspace.rest.tenant
+#    - group: workspace-user
+#      packagesToScan: org.dows.workspace.rest.user
+
+#    - group: material-admin
+#      packagesToScan: org.dows.material.rest
+#    - group: material-tenant
+#      packagesToScan: org.dows.material.rest.tenant
+#    - group: material-user
+#      packagesToScan: org.dows.material.rest.user
+
+#    - group: eqpt-admin
+#      packagesToScan: org.dows.eqpt.rest
+#    - group: eqpt-tenant
+#      packagesToScan: org.dows.eqpt.rest.tenant
+#    - group: eqpt-user
+#      packagesToScan: org.dows.eqpt.rest.user
+
+#    - group: task-admin
+#      packagesToScan: org.dows.task.rest
+#    - group: task-tenant
+#      packagesToScan: org.dows.task.rest.tenant
+#    - group: task-user
+#      packagesToScan: org.dows.task.rest.user
+#
+#    - group: inventory-admin
+#      packagesToScan: org.dows.inventory.rest
+#    - group: inventory-tenant
+#      packagesToScan: org.dows.inventory.rest.tenant
+#    - group: inventory-user
+#      packagesToScan: org.dows.inventory.rest.user
+#
+#    - group: app-admin
+#      packagesToScan: org.dows.app.rest
+#    - group: app-tenant
+#      packagesToScan: org.dows.app.rest.tenant
+#    - group: app-user
+#      packagesToScan: org.dows.app.rest.user
+#    - group: module-super
+#      packagesToScan: org.dows.module.rest
+
+---
+#生产环境
+spring:
+  config:
+    activate:
+      on-profile: prd
+springdoc:
+  api-docs:
+    enabled: false
+
+
+---
+#测试环境
+spring:
+  config:
+    activate:
+      on-profile: sit
+springdoc:
+  api-docs:
+    enabled: true
+
+---
+#开发环境
+spring:
+  config:
+    activate:
+      on-profile: dev
+springdoc:
+  api-docs:
+    enabled: true
+---
+spring:
+  config:
+    activate:
+      on-profile: uat
+springdoc:
+  api-docs:
+    enabled: true

@@ -1,0 +1,8 @@
+dows:
+  menu:
+    items:
+      - appId: material
+        name: 物料管理
+        code: material
+        roles:
+        scanPackages: org.dows.material.rest.admin

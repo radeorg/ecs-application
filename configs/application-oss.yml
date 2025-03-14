@@ -1,0 +1,31 @@
+oss:
+  minio:
+    enable: false
+    access-key: PHTHKEPBYYD079K90B0O
+    secret-key: ya35DAaNmtMKm0m7Yntdwj8m1p5ud+3fQ2kM5XDn
+    bucket-name: hengli
+    base-path: document
+    endpoint: http://192.168.1111.103:9000
+    slice-config:
+      task-num: 8
+      part-size: 104857604
+  local:
+    enable: true
+    basePath: /diy/saas/hengli/dev/resources
+    slice-config:
+      task-num: 8
+      part-size: 104857600
+#    ossConfig:
+#      volumed:
+#        basePath: /shdy/resources/
+#        slice-config:
+#          task-num: 8
+#          part-size: 104857600
+spring:
+  servlet:
+    multipart:
+      # 根据实际需求作调整
+      # 默认最大上传文件大小为1M，单个文件大小
+      max-file-size: 500MB
+      # 默认最大请求大小为10M，总上传的数据大小
+      max-request-size: 500MB

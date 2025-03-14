@@ -1,0 +1,74 @@
+spring:
+  redis:
+    #数据库索引
+    database: ${REDIS_DB:0}
+    #host: ${REDIS_HOST:10.251.76.39}
+    #port: ${REDIS_PORT:7001}
+    #password: ${REDIS_PWD:}
+    #password: ${REDIS_PWD:mypassword}
+    #连接超时时间
+    timeout: 30000
+    client-type: jedis
+#    lettuce:
+#      pool:
+#        max-idle: 8
+#        min-idle: 0
+#        max-active: 8
+#        max-wait: -1ms
+
+
+---
+#生产环境
+spring:
+  config:
+    activate:
+      on-profile: prd
+  redis:
+    #数据库索引
+    host: ${REDIS_HOST:101.35.194.46}
+    port: ${REDIS_PORT:6381}
+    password: ${REDIS_PWD:}
+
+
+---
+#测试环境
+spring:
+  config:
+    activate:
+      on-profile: sit
+  redis:
+    #    测试环境集群：host: redis-sit.mid.io，# 测试环境redis 有问题
+    host: ${REDIS_HOST:172.17.32.15}
+    port: 26379
+    jedis:
+      pool:
+        max-active: 10000
+        max-wait: -1
+        max-idle: 100
+        min-idle: 20
+
+---
+#开发环境
+spring:
+  config:
+    activate:
+      on-profile: dev
+  redis:
+    #数据库索引
+    host: ${REDIS_HOST:101.35.194.46}
+    port: 6379
+    password: ${REDIS_PWD:}
+    #    cluster:
+    #      max-redirects: 3
+    #      nodes:
+    #        - 10.251.76.39:7001
+    #        - 10.251.76.39:7004
+    #        - 10.251.76.21:7002
+    #        - 10.251.76.21:7005
+    #        - 10.251.76.22:7003
+    #        - 10.251.76.22:7006
+    jedis:
+      pool:
+        max-active: 500
+        max-idle: 10
+

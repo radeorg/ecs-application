@@ -1,0 +1,8 @@
+dows:
+  menu:
+    items:
+      - appId: eqpt
+        name: 设备管理
+        code: eqpt
+        roles: manager
+        scanPackage: org.dows.eqpt.rest.admin

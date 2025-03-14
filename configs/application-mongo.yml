@@ -1,0 +1,53 @@
+spring:
+  config:
+    activate:
+      on-profile: dev
+  data:
+    mongodb:
+      database: acre
+      host: 192.168.111.103
+      port: 17017
+      username: shdy
+      password: shdy123!
+
+---
+spring:
+  #  profiles: dev
+  config:
+    activate:
+      on-profile: sit
+  data:
+    mongodb:
+      database: acre
+      host: 192.168.111.103
+      port: 17017
+      username: shdy
+      password: shdy123!
+
+---
+spring:
+  #  profiles: dev
+  config:
+    activate:
+      on-profile: uat
+  data:
+    mongodb:
+      database: acre
+      host: 192.168.23.34
+      port: 17017
+      username: shdy
+      password: shdy123!
+
+---
+spring:
+  #  profiles: prd
+  config:
+    activate:
+      on-profile: prd
+  data:
+    mongodb:
+      database: acre
+      host: dev-mongo
+      port: 27017
+      username: shdy
+      password: shdy123!

@@ -1,0 +1,31 @@
+dows:
+  task:
+    cdc:
+      dataSource:
+        acre:
+          host: 192.168.111.103
+          port: 11433
+          database: acre
+          tableList: dbo.work_order
+          username: sa
+          password: shdy123!
+    datasource:
+      #      acre-mysql:
+      #        driver-class-name: com.mysql.cj.jdbc.Driver
+      #        url: jdbc:mysql://localhost:3306/
+      #        username: root
+      #        password: 123456
+      acre-sqlserver:
+        hikari:
+          maximum-pool-size: 100
+          minimum-idle: 50
+          connectionTimeout: 6000
+          driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+          jdbc-url: jdbc:sqlserver://192.168.111.103:11433;acre;encrypt=true;trustServerCertificate=true;databaseName=acre;characterEncoding=UTF-8
+          username: sa
+          password: shdy123!
+        driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+        url: jdbc:sqlserver://192.168.111.103:11433;acre;encrypt=true;trustServerCertificate=true;characterEncoding=UTF-8
+        username: sa
+        password: shdy123!
+

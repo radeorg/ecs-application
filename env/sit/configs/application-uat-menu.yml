@@ -1,0 +1,9 @@
+dows:
+  menu:
+    items:
+      - appId: uat
+        name: 用户身份
+        code: uat
+        roles:
+        scanPackages: org.dows.uat.rest.admin
+

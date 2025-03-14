@@ -1,0 +1,7 @@
+dows:
+  ssh:
+    clients:
+      - host: 81.69.195.111
+        port: 22
+        user: root
+        pwd: 2028@wes!

@@ -1,0 +1,32 @@
+oss:
+  endpoint: http://minio.xx.cn
+  access-key: xx
+  secret-key: xx
+  local:
+    enable: true
+    basePath: /opt/dows/wes-test/user/uploads
+    slice-config:
+      task-num: 8
+      part-size: 104857600 # 1024*1024*100
+
+    ossConfig:
+      volumnd:
+        basePath: /opt/dows/wes-test/user/uploads
+        slice-config:
+          task-num: 8
+          part-size: 104857600 # 1024*1024*100
+  tencent:
+    enable: true
+    endpoint: myqcloud.com
+    region: ap-shanghai
+    secret-key: ENC(OmEvjUhm7Xun/7gTtACQNi1v0Oxq2aqjtnRMH0jFhaUsQssWZYEwE0b9PNaKyTfm)
+    secret-id: ENC(6iZ57pPc/xr07czvwd7iFm2iwi5o//I3eHY1yxthKzrZzD5/NaDg4QUFBJ4r4z+X)
+    bucket-name: wessaas-1308265135
+    base-path: /esign-test
+    slice-config:
+      task-num: 8
+      part-size: 104857604 # 1024*1024*100
+
+# 图片上传url
+upload:
+  path: ${user.dir}/uploads/store/table/

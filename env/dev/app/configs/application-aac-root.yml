@@ -1,0 +1,30 @@
+dows:
+  aac:
+    login:
+      enabled: true
+      single: false
+      type: single
+      url: /v1/api/aac/login
+    whitelist:
+      - /v1/api/aac/login/enable
+      - /v1/api/aac/captcha
+      - /v1/api/aac/login
+      - /v1/api/aac/logout
+      - /swagger-ui/**
+      - /webjars/**
+      - /templates/**
+      - /doc
+      - /api-docs/**
+      - /favicon.ico
+      - /ws/**
+      - /iot/**
+      - /v1/admin/task/listening/vehicle
+    jwt-setting:
+      # 令牌自定义标识
+      header: Authorization
+      # 令牌密钥
+      secret-key: Yx7GcP3UY194v8U.fLyhBiFZFxKOagQZt1baEhKlTfMW
+      # 令牌过期时间
+      expiration: 86400000 # a day
+      # 刷新令牌过期时间
+      refresh-expiration: 604800000 # 7 days

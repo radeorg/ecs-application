@@ -1,0 +1,22 @@
+dows:
+  menu:
+    items:
+      - appId: 1234
+        name: 应用管理
+        code: app
+        roles: admin
+        scanPackages: org.dows.app.rest.admin
+
+  role:
+    items:
+      - appId: 1234
+        name: admin
+        code: app
+
+  uri:
+    items:
+      - appId: 1234
+        name: '应用管理'
+        code: app
+        roles: admin
+        scanPackages: org.dows.app.rest.admin

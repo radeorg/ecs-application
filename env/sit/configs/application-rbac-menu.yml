@@ -1,0 +1,10 @@
+dows:
+  menu:
+    items:
+      - appId: rbac
+        name: '资源权限'
+        code: rbac
+        roles: manager
+        scanPackages: org.dows.rbac.rest.admin
+
+

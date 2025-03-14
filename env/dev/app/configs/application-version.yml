@@ -1,0 +1,10 @@
+dows:
+  wes:
+    appId: 1
+    appCode: wes
+    appName: 店小智
+    version: V1-20220730
+    modules:
+      - uim:用户统一身分管理
+      - oms:订单管理系统
+      - pms:商品管理系统

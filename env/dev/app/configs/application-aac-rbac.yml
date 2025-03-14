@@ -1,0 +1,22 @@
+dows:
+  menu:
+    items:
+      - appId: 1234
+        name: '授权管理'
+        code: aac
+        roles: admin
+        scanPackages: org.dows.aac.rest.admin
+
+  role:
+    items:
+      - appId: 1234
+        name: admin
+        code: aac
+
+  uri:
+    items:
+      - appId: 1234
+        name: '授权管理'
+        code: aac
+        roles: admin
+        scanPackages: org.dows.aac.rest.admin

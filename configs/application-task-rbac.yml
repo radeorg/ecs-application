@@ -1,0 +1,23 @@
+dows:
+  menu:
+    items:
+      - appId: 1234
+        name: 任务工单
+        code: task
+        roles: admin
+        scanPackages: org.dows.task.rest.admin
+
+  role:
+    items:
+      - appId: 1234
+        name: admin
+        code: task
+
+  uri:
+    items:
+      - appId: 1234
+        name: '任务管理'
+        code: task
+        roles: admin
+        scanPackages: org.dows.task.rest.admin
+

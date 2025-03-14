@@ -1,0 +1,19 @@
+{
+  "platform": "alipay",
+  "isv": {
+    "create": {
+      "aa": "",
+      "bb": "",
+      "cc": ""
+    }
+  },
+  "mini": {
+    "create": {
+      "aa": "",
+      "bb": "",
+      "cc": ""
+    }
+  },
+  "pay": {
+  }
+}

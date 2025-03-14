@@ -1,0 +1,23 @@
+dows:
+  menu:
+    items:
+      - appId: 1234
+        name: 用户身份
+        code: uat
+        roles: admin
+        scanPackages: org.dows.uat.rest.admin
+
+  role:
+    items:
+      - appId: 1234
+        name: admin
+        code: uat
+
+  uri:
+    items:
+      - appId: 1234
+        name: '账号管理'
+        code: uat
+        roles: admin
+        scanPackages: org.dows.uat.rest.admin
+

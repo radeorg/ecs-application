@@ -1,0 +1,10 @@
+dows:
+  uri:
+    items:
+      - appId: aac
+        name: '账号管理'
+        code: aac
+        roles: manager
+        scanPackages: org.dows.aac.rest.admin
+
+

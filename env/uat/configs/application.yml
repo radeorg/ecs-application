@@ -1,0 +1,27 @@
+server:
+  port: 8080
+  undertow:
+    buffer-size: 1024
+    direct-buffers: true
+    threads:
+      io: 4
+      worker: 32
+
+
+spring:
+  application:
+    name: wes-tenant
+  profiles:
+    include: version,mysql,alipay,log,mybatis,oss,redis,weixin,ws,ssh,domain,printer,actuator
+    active: sit
+  servlet:
+    multipart:
+      max-file-size: 10MB
+
+order:
+  url: http://81.69.171.79:9011/order
+
+jasypt:
+  encryptor:
+    algorithm: PBEWithMD5AndDES
+    iv-generator-classname: org.jasypt.iv.NoIvGenerator

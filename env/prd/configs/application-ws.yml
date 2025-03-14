@@ -1,0 +1,9 @@
+ws:
+  port: 9528
+dows:
+  websocket:
+    port: 9528
+    producer:
+      retry:
+        cron: 0/3 * * * * ?
+        duration: 3

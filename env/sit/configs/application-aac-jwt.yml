@@ -1,0 +1,12 @@
+dows:
+  token:
+    # 令牌自定义标识
+    header: Authorization
+    # 令牌密钥
+    secret-key: Yx7GcP3UY194v8U.fLyhBiFZFxKOagQZt1baEhKlTfMW
+    # 令牌有效期
+    expiration: 86400000 # a day
+    refresh-expiration: 604800000 # 7 days
+
+
+

@@ -1,0 +1,22 @@
+dows:
+  menu:
+    items:
+      - appId: 1234
+        name: 工区管理
+        code: workspace
+        roles: admin
+        scanPackages: org.dows.workspace.rest.admin
+
+  role:
+    items:
+      - appId: 1234
+        name: admin
+        code: workspace
+
+  uri:
+    items:
+      - appId: 1234
+        name: '工区管理'
+        code: workspace
+        roles: admin
+        scanPackages: org.dows.workspace.rest.admin

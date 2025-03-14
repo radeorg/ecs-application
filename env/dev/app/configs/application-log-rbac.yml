@@ -1,0 +1,22 @@
+dows:
+  menu:
+    items:
+      - appId: 1234
+        name: 应用日志
+        code: log
+        roles: admin
+        scanPackages: org.dows.log.rest.admin
+
+  role:
+    items:
+      - appId: 1234
+        name: admin
+        code: log
+
+  uri:
+    items:
+      - appId: 1234
+        name: '应用日志'
+        code: log
+        roles: admin
+        scanPackages: org.dows.log.rest.admin

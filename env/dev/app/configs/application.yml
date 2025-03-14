@@ -1,0 +1,34 @@
+server:
+  port: 8080
+  undertow:
+    buffer-size: 1024
+    direct-buffers: true
+    threads:
+      io: 4
+      worker: 32
+  servlet:
+    encoding:
+      charset: UTF-8
+#    context-path: /tenant
+
+spring:
+  application:
+    name: acre
+  jackson:
+    time-zone: Asia/Shanghai
+  profiles:
+    include: |
+      version,mybatis,log,caffeine,oss,ws,ssh,domain,apidoc,app,license,mongo,cron,
+      init,depends,datasource,cdc,mysql,task-init,task,aac-root,module,
+      rbac-rbac,rbac-root,rbac-caffeine,uat-rbac,log-rbac,app-rbac,
+      aac-rbac,aac-rbac,workspace-rbac,eqpt-rbac,material-rbac,inventory-rbac,task-rbac
+
+    active: dev
+  servlet:
+    multipart:
+      max-file-size: 10MB
+
+#jasypt:
+#  encryptor:
+#    algorithm: PBEWithMD5AndDES
+#    iv-generator-classname: org.jasypt.iv.NoIvGenerator
