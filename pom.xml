@@ -13,12 +13,13 @@
     <version>1.0.0-SNAPSHOT</version>
 
     <properties>
-        <spring-cloud.version>2023.0.3</spring-cloud.version>
-        <image.alias>acre-api</image.alias>
-        <image.tag>1.0.231114</image.tag>
-        <jdk.version>17</jdk.version>
-        <uat.version>1.0.0-SNAPSHOT</uat.version>
-        <rbac.version>1.0.0-SNAPSHOT</rbac.version>
+
+        <jdk.version>23</jdk.version>
+        <uim.version>1.0.0-SNAPSHOT</uim.version>
+        <hrm.version>1.0.0-SNAPSHOT</hrm.version>
+
+
+        <!--<rbac.version>1.0.0-SNAPSHOT</rbac.version>
         <log.version>1.0.0-SNAPSHOT</log.version>
         <aac.version>1.0.0-SNAPSHOT</aac.version>
         <cdc.version>1.0.0-SNAPSHOT</cdc.version>
@@ -30,7 +31,7 @@
         <task.version>1.0.0-SNAPSHOT</task.version>
         <vac.version>1.0.0-SNAPSHOT</vac.version>
         <iot.version>1.0.0-SNAPSHOT</iot.version>
-        <license.version>1.0.0-SNAPSHOT</license.version>
+        <license.version>1.0.0-SNAPSHOT</license.version>-->
 
         <flink.version>1.19.1</flink.version>
 
@@ -43,9 +44,15 @@
 
         <dependency>
             <groupId>org.dows.cloud</groupId>
-            <artifactId>uat-boot</artifactId>
-            <version>${uat.version}</version>
+            <artifactId>uim-boot</artifactId>
+            <version>${uim.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.dows.cloud</groupId>
+            <artifactId>hrm-boot</artifactId>
+            <version>${hrm.version}</version>
+        </dependency>
+
         <!--<dependency>
             <groupId>org.dows.cloud</groupId>
             <artifactId>rbac-boot</artifactId>
