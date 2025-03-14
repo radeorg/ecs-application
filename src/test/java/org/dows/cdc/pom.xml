@@ -417,7 +417,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>org.dows.ecs.admin.AcreApplication</mainClass>
+                            <mainClass>org.dows.ecs.admin.EcsApplication</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
@@ -448,7 +448,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>org.dows.ecs.admin.AcreApplication</mainClass>
+                    <mainClass>org.dows.ecs.admin.EcsApplication</mainClass>
                     <includeSystemScope>true</includeSystemScope>
                     <layers>
                         <enabled>true</enabled>

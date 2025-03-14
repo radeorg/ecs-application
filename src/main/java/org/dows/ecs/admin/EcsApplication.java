@@ -8,13 +8,13 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 /**
  * Hello world!
  */
-@EnableFeignClients(basePackages = "org.dows.vac.rpc")
+//@EnableFeignClients(basePackages = "org.dows.vac.rpc")
 @EnableConfigurationProperties(AppVersion.class)
 @SpringBootApplication(scanBasePackages = {"org.dows.framework", "com.shdy.admin"})
-public class AcreApplication {
+public class EcsApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(AcreApplication.class, args);
+        SpringApplication.run(EcsApplication.class, args);
     }
 
 

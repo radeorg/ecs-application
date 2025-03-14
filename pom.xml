@@ -258,13 +258,13 @@
             <version>2.0.51</version>
         </dependency>
 
-        <dependency>
+        <!--<dependency>
             <groupId>examples</groupId>
             <artifactId>examples</artifactId>
             <version>1</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/src/main/resources/examples.jar</systemPath>
-        </dependency>
+        </dependency>-->
 
         <!--<dependency>
             <groupId>org.apache.flink</groupId>
@@ -346,7 +346,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>org.dows.ecs.admin.AcreApplication</mainClass>
+                            <mainClass>org.dows.ecs.admin.EcsApplication</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
@@ -387,7 +387,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>org.dows.ecs.admin.AcreApplication</mainClass>
+                    <mainClass>org.dows.ecs.admin.EcsApplication</mainClass>
                     <includeSystemScope>true</includeSystemScope>
                     <layers>
                         <enabled>true</enabled>
